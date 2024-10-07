@@ -63,17 +63,15 @@ bool is_valid_position(int row, int col) {
 
 // Função principal para navegar pelo labirinto
 bool walk(Position pos) {
-    // Marcar a posição atual como visitada
-    maze[pos.row][pos.col] = 'o';  // Marca a posição corrente
-    print_maze();
-    std::this_thread::sleep_for(std::chrono::milliseconds(50));
-
+    // Verifica se a posição atual é a saída
     if (maze[pos.row][pos.col] == 's') {
         return true; // Encontrou a saída
     }
 
-    // Marca a posição como visitada
-    maze[pos.row][pos.col] = '.';
+    // Marca a posição atual como visitada
+    maze[pos.row][pos.col] = '.';  // Marca a posição corrente como visitada
+    print_maze();
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
 
     // Verifica as posições adjacentes
     std::vector<Position> directions = {
