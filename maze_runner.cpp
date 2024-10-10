@@ -74,7 +74,7 @@ bool walk(Position pos) {
     // Marcar a posição atual como corrente
     maze[pos.row][pos.col] = 'o';  // Marca a posição corrente
     print_maze();
-    std::this_thread::sleep_for(std::chrono::milliseconds(100)); // Pequena pausa para visualização
+    std::this_thread::sleep_for(std::chrono::milliseconds(50)); // Pequena pausa para visualização
 
     // Marcar a posição atual como visitada (depois de imprimir)
     maze[pos.row][pos.col] = '.'; 
@@ -227,7 +227,7 @@ void walk(Position start_pos) {
 
         // Imprime o labirinto com atraso para visualização
         print_maze();
-        std::this_thread::sleep_for(std::chrono::milliseconds(200)); // Pequena pausa para visualização
+        std::this_thread::sleep_for(std::chrono::milliseconds(50)); // Pequena pausa para visualização
 
         {
             std::lock_guard<std::mutex> lock(maze_mutex);
